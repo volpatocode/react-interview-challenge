@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d0d0d;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  border: 1px solid red;
+}
+
+.btn{
+  cursor: pointer;
+  padding: 6px 8px;
+  background: white;
+  color: black;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.btn:disabled {
+    background: grey;
+    color: white;
+    cursor:default;
+
+}
+
+
+.circle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
