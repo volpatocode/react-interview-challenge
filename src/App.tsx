@@ -15,19 +15,33 @@ function App() {
   }
 
   function handleUndo() {
-    let popped = circles?.pop()
+    let popped = circles?.pop();
+    if (!popped) return;
     setPoppedCircles([...poppedCircles, popped]);
   }
 
   function handleRedo() {
-    let popped = poppedCircles?.pop()
-    setCircles([...circles, popped])
+    let popped = poppedCircles?.pop();
+    if (!popped) return;
+    setCircles([...circles, popped]);
   }
 
   return (
     <>
-      <button disabled={circles.length < 1} onClick={handleUndo} className="btn">Undo</button>
-      <button disabled={poppedCircles.length < 1} onClick={handleRedo} className="btn">Redo</button>
+      <button
+        disabled={circles.length < 1}
+        onClick={handleUndo}
+        className="btn"
+      >
+        Undo
+      </button>
+      <button
+        disabled={poppedCircles.length < 1}
+        onClick={handleRedo}
+        className="btn"
+      >
+        Redo
+      </button>
       <div
         onClick={(e) => {
           addCircle(e.clientX, e.clientY);
